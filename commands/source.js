@@ -3,7 +3,7 @@ const { inspect } = require("util");
 exports.run = (client, message, args, level) => {
 	let cmd = client.commands.get(args.join(" "));
 	if(!cmd) return message.reply("Command not found");
-	message.channel.send(`\`\`\`${inspect(cmd.toString())}\`\`\``);
+	message.channel.send(`\`\`\`${inspect(cmd.run.toString())}\`\`\``);
 };
 
 exports.conf = {
