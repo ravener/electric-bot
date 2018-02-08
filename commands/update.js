@@ -12,7 +12,7 @@ exports.run = async(client, message, args, level) {
     if (!stdout.toString().includes('Already up-to-date.')) {
      client.commands.get("ping").run(client, message, args, level);
     }
-  }
+  };
 
 exports.conf = {
   enabled: true,
