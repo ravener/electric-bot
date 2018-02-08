@@ -40,8 +40,8 @@ module.exports = (client) => {
 		 .then(res => {
 		 	return resolve(`https://hastebin.com/${res.body.key}`);
 		 }).catch(err => {
-		 	return reject(err));
-		  }
+		 	return reject(err);
+		  });
 		});
 	};
 
