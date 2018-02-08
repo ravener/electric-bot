@@ -1,0 +1,32 @@
+{
+  "name": "electric-bot",
+  "version": "1.0.0",
+  "description": "A simple discord.js bot by Free TNT#5796 using guidebot's command handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freetnt5852/electric-bot.git"
+  },
+  "author": "Free TNT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freetnt5852/electric-bot/issues"
+  },
+  "homepage": "https://github.com/freetnt5852/freetnt.js#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "discord.js": "^11.3.0",
+    "enmap": "^0.4.2",
+    "enmap-level": "^1.0.0",
+    "moment": "^2.20.1",
+    "moment-duration-format": "^2.2.0",
+    "superagent":"^3.8.2"
+  }
+}
