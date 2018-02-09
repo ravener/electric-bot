@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = (client, message, args, level) => {
+exports.run = async(client, message, args, level) => {
 const responses = [
    'It is certain',
    'It is decidedly so',
@@ -23,7 +23,7 @@ const responses = [
    'Outlook not so good',
    'Very doubtful'
 ];
-let think = message.channel.send("<a:typing:Id here:> 8ball is thinking...");
+let think = message.channel.send("<a:typing:408438059516821515> 8ball is thinking...");
 await client.wait(3000);
 think.delete();
 
