@@ -31,7 +31,7 @@ const question = args.join(" ");
 const embed = new Discord.RichEmbed()
    .setTitle(question)
    .setAuthor(message.author.username, message.author.avatarURL)
-   .setDescription(`${responses.random()}`);
+   .setDescription(`${responses.random()}`)
    .setColor(0x0000FF)
    message.channel.send({embed});
 };
