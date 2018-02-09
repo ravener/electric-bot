@@ -8,6 +8,7 @@
 
 const { inspect } = require("util");
 const { post } = require("snekfetch");
+const Discord = require("discord.js");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   const code = args.join(" ");
@@ -39,7 +40,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['ev'],
   permLevel: "Bot Owner"
 };
 
