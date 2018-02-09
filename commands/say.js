@@ -1,12 +1,8 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args, level) => {
-	if(!message.guild.me.permissions.hasPermission("MANAGE_MESSAGES")) {
-		message.channel.send(args.join(" "));
-	} else {
-		message.delete();
-		message.channel.send(args.join(" "));
-	}
+      message.delete().catch(console.error); // just incase if bot doesn't have permissions catch the error.
+      message.channel.send(args.join(" "));
 };
 
 exports.conf = {
