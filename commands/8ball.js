@@ -26,8 +26,7 @@ const responses = [
 message.channel.send("<a:typing:408438059516821515> 8ball is thinking...").then(async(msg) => {
 await client.wait(3000);
 msg.delete();
-});
-   
+
 const question = args.join(" ");
 const embed = new Discord.RichEmbed()
    .setTitle(question)
@@ -35,7 +34,9 @@ const embed = new Discord.RichEmbed()
    .setDescription(`${responses.random()}`)
    .setColor(0x0000FF)
    message.channel.send({embed});
+   });
 };
+                                                                                
 
 exports.conf = {
   enabled: true,
