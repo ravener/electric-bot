@@ -13,6 +13,6 @@ exports.conf = {
 exports.help = {
   name: "invite",
   category: "Miscelaneous",
-  description: "Want me to in you server?",
+  description: "Want me in you server?",
   usage: "invite"
 };
