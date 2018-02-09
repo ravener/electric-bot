@@ -23,10 +23,11 @@ const responses = [
    'Outlook not so good',
    'Very doubtful'
 ];
-let think = message.channel.send("<a:typing:408438059516821515> 8ball is thinking...");
+message.channel.send("<a:typing:408438059516821515> 8ball is thinking...").then(async(msg) => {
 await client.wait(3000);
-think.delete();
-
+msg.delete();
+});
+   
 const question = args.join(" ");
 const embed = new Discord.RichEmbed()
    .setTitle(question)
