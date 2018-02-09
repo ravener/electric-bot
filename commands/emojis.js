@@ -1,6 +1,6 @@
 exports.run = (client, message, args, level) => {
   const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-  message.channel.send(emojiList);
+  message.channel.send(emojiList).catch(err => message.channel.send("Looks like there's no emojis in this server"));
 };
 
 exports.conf = {
