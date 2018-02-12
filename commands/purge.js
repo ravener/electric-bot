@@ -8,7 +8,7 @@ message.channel.fetchMessages({
  limit: amount,
 }).then((messages) => {
  if (user) {
- const filterBy = user ? user.id : Client.user.id;
+ const filterBy = user ? user.id : client.user.id;
  messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
  }
  message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
