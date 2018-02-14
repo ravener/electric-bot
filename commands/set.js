@@ -70,7 +70,40 @@ exports.run = async (client, message, [action, key, ...value], level) => { // es
     if (!settings[key]) return message.reply("This key does not exist in the settings");
     message.reply(`The value of ${key} is currently ${settings[key]}`);
   } else {
-    message.channel.send(inspect(settings), {code: "json"});
+    message.channel.send(`== Settings ==
+Use: ${settings.prefix}set edit <key> <value> to edit a settings.
+== Welcome ==
+welcome messages can use placeholders that will be replaced on sending time, available placeholders:
+{{user}} mentions a user.
+{{server}} the server name.
+{{count}} the server's member count.
+example: ${settings.prefix}set edit welcomeMessage Welcome {{user}} to {{server}} we now have {{count}} members!
+
+• welcomeMessage :: ${settings.welcomeMessage}
+• welcomeEnabled :: ${settings.welcomeEnabled}
+• welcomeChannel :: ${settings.welcomeChannel}
+Note: for welcome channel you must provide exact channel name and its case sensitive, make sure bot has permissions to post in the channel as well.
+
+== Leave ==
+Coming soon!
+
+== Prefix ==
+Prefix is what you need to use the bot like +ping means + is prefix, current prefix:
+• prefix :: ${settings.prefix}
+
+== ModLogs ==
+Modlogs is meant to log every mod actions like kick ban etc current modlog channel is,
+• modLogChannel :: ${settings.modLogChannel}
+Modlogs doesn't work at the moment.
+
+== Admin and Mod Role ==
+This are mod and admin roles they must be set so your server mods and admins to be able to use some commands.
+they are case sensitive and must be spelled exactly as rolename.
+Current settings:
+• adminRole :: ${settings.adminRole}
+• modRole :: ${settings.modRole}
+== Settings ==
+`, {code:"asciidoc"});
   }
 };
 
