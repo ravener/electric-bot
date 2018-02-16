@@ -2,7 +2,7 @@ exports.run = (client, message, args, level) => {
 	if(!args || args.length < 1) return message.reply("You must mention choices to pick from, seperated by commas.");
 	let msg = args.join(" ");
 	let choice = msg.split(",");
-	if(choice.lenght < 1) return message.reply("You must include atleast 2 choices");
+	if(choice.length < 2) return message.reply("You must include atleast 2 choices");
 	message.channel.send(`:thinking:`)
 	.then(async(msg) => {
 		await client.wait(2000);
