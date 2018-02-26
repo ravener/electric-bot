@@ -26,7 +26,7 @@ client.config = require("./config.js");
 client.logger = require("./util/Logger");
 
 // idiotic-api Client
-client.api = new IdioticAPI.Client(config.idioticKey, {dev: true});
+client.api = new IdioticAPI.Client(client.config.idioticKey, {dev: true});
 
 // Let's start by getting some useful functions that we'll use throughout
 // the bot, like logs and elevation features.
