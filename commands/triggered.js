@@ -1,10 +1,11 @@
 const Discord = require("discord.js");
 
 exports.run = async(client, message, args, level) => {
-  const user = message.mentions.members.first() || message.author;
+  let user = message.mentions.members.first() ? message.mentions.members.first().user : message.author
+  let avatar = user.displayAvatarURL.endsWith(".gif") ? user.displayAvatarURL + "?size=2048" : user.displayAvatarURL;
 try {
   await message.channel.send(new Discord.Attachment(
-  await client.api.triggered(user.displayAvatarURL + "?size=2048"), "triggered.gif"));
+  await client.api.triggered(avatar), "triggered.gif"));
 } catch(e) {
  console.error(e);
  }
