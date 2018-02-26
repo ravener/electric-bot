@@ -10,6 +10,7 @@ const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-level");
+const IdioticAPI = require("idiotic-api");
 
 // This is your client. Some people call it `bot`, some people call it `self`,
 // some might call it `cootchie`. Either way, when you see `client.something`,
@@ -23,6 +24,9 @@ client.config = require("./config.js");
 
 // Require our logger
 client.logger = require("./util/Logger");
+
+// idiotic-api Client
+client.api = new IdioticAPI.Client(config.idioticKey, {dev: true});
 
 // Let's start by getting some useful functions that we'll use throughout
 // the bot, like logs and elevation features.
