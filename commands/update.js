@@ -2,7 +2,7 @@ const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 const path = require('path');
 
-exports.run = async(client, message, args, level) {
+exports.run = async(client, message, args, level) => {
     const { stdout, stderr, err } = await exec(`git pull`);
     if (err) return console.error(err);
     const out = [];
