@@ -7,7 +7,7 @@ exports.run = (client, message, args, level) => {
 	if(!args[1]) return message.reply("Please add a name for the emoji, `copy emoji_id emoji_name`");
 	message.guild.createEmoji(`https://cdn.discordapp.com/emojis/${args[0]}`, args[1])
 	.then(emoji => {
-		message.channel.send(`:thumbsup: copied emoji ${emoji.name} <$:{emoji.name}:${emoji.id}>`);
+		message.channel.send(`:thumbsup: copied emoji ${emoji.name} <:${emoji.name}:${emoji.id}>`);
 	}).catch(e => {
 		message.reply("Looks like i couldn't find the emoji, make sure you provided correct ID");
 		logger.error(e);
