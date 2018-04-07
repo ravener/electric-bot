@@ -12,5 +12,7 @@ module.exports = (client, member) => {
 
   // Send the welcome message to the welcome channel
   // There's a place for more configs here.
-  member.guild.channels.find("name", settings.welcomeChannel).send(welcomeMessage).catch(console.error);
+  const chan = member.guild.channels.find("name", settings.welcomeChannel)
+  if(!chan) return;
+  chan.send(welcomeMessage).catch(console.error);
 };
