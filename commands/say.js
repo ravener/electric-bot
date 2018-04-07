@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = (client, message, args, level) => {
-      message.delete().catch(console.error); // just incase if bot doesn't have permissions catch the error.
+      if(message.deletable) message.delete();
       message.channel.send(args.join(" "));
 };
 

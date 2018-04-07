@@ -28,7 +28,7 @@ await client.wait(3000);
 msg.delete();
 
 const question = args.join(" ");
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
    .setTitle(question)
    .setAuthor(message.author.username, message.author.avatarURL)
    .setDescription(`${responses.random()}`)

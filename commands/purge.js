@@ -5,7 +5,7 @@ let amount = !!parseInt(args[0]) ? parseInt(args[0]) : parseInt(args[1])
 if (!amount) return message.reply('Must specify an amount to delete!');
 if (!amount && !user) return message.reply('Must specify a user and amount, or just an amount, of messages to purge!');
 amount++;
-message.channel.fetchMessages({
+message.channel.messages.fetch({
  limit: amount,
 }).then((messages) => {
  if (user) {
