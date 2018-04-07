@@ -30,7 +30,7 @@ msg.delete();
 const question = args.join(" ");
 const embed = new Discord.MessageEmbed()
    .setTitle(question)
-   .setAuthor(message.author.username, message.author.avatarURL)
+   .setAuthor(message.author.username, message.author.avatarURL())
    .setDescription(`${responses.random()}`)
    .setColor(0x0000FF)
    message.channel.send({embed});

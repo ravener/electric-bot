@@ -4,7 +4,7 @@ exports.run = async(client, message, args, level) => {
   const user = message.mentions.members.first() ? message.mentions.members.first().user : message.author;
 try {
   await message.channel.send(new MessageAttachment(
-  await client.api.triggered(user.displayAvatarURL({ format: png, size: 2048 }), "triggered.gif"));
+  await client.api.triggered(user.displayAvatarURL({ format: png, size: 2048 })), "triggered.gif"));
 } catch(e) {
  console.error(e);
  }
