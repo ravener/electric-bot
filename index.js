@@ -4,6 +4,7 @@ const readdir = promisify(require("fs").readdir);
 const Enmap = require("enmap");
 const EnmapLevel = require("enmap-level");
 const IdioticAPI = require("idiotic-api");
+const mongoose = require("mongoose");
 
 const client = new Discord.Client();
 
@@ -24,7 +25,9 @@ client.aliases = new Enmap();
 
 
 client.settings = new Enmap({provider: new EnmapLevel({name: "settings"})});
-
+mongoose.connect(client.config.mongodb);
+mongoose.connection.once("open", () => client.logger.log("MongoDB Connected!"));
+mongoose.connection.on("error", client.logger.error);
 
 
 const init = async () => {
