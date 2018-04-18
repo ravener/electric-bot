@@ -2,7 +2,7 @@
 // im working on, this cmd looked a bit hard so i wanted
 // to test it first.
 
-const { tag } = require("../utils/db.js");
+const { tag } = require("../util/db.js");
 
 exports.run = (client, message, args) => {
   
