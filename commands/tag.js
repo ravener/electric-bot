@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
             client.logger.error(err);
             return message.reply("Something went wrong");
           } else {
-            return message.channel.send(`Deleted, tag ${tag}`);
+            return message.channel.send(`Deleted, tag ${name}`);
           }
         });
         break;
@@ -45,7 +45,7 @@ exports.run = (client, message, args) => {
             client.logger.error(err);
             return message.reply("Something went wrong");
           } else {
-            message.channel.send(tags.map(x => "*" + x.name + "*"), { split: "\n" });
+            message.channel.send(tags.map(x => "*" + x.name + "*").join(", "), { split: "\n" });
           }
         });
         break;
@@ -56,6 +56,7 @@ exports.run = (client, message, args) => {
             client.logger.error(err);
             return message.reply("Something went wrong");
           } else {
+            if(!tag) return message.reply("Could not find that tag");
             message.channel.send(tag.content);
           }
         });
