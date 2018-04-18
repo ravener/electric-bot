@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const tag = new mongoose.schema({
+const tag = new mongoose.Schema({
   name: { type: String, required: true },
   guild: { type: String, required: true },
   content: { type: String, required: true },
