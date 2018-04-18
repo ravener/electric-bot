@@ -6,7 +6,7 @@ const { tag } = require("../util/db.js");
 
 exports.run = (client, message, args) => {
   
-    const action = args.join(" ");
+    const action = args[0];
     if(!action) return message.reply("Invalid usage, usage: `" + "tag <add|delete|list|TAGNAME>" + "`");
     switch(action) {
       case "add": {
