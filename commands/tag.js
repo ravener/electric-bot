@@ -46,7 +46,9 @@ exports.run = (client, message, args) => {
             client.logger.error(err);
             return message.reply("Something went wrong");
           } else {
-            message.channel.send(tags.map(x => "*" + x.name + "*").join(", "), { split: "\n" });
+            message.channel.send(tags.map(x => "*" + x.name + "*").join(", "), { split: "\n" }).catch(e => {
+              if(e.status === 400) return message.reply("There is no tags in this server.");
+            });
           }
         });
         break;
