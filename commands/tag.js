@@ -29,11 +29,12 @@ exports.run = (client, message, args) => {
           break;
         }
         const name = args[1];
-        tag.remove({ guild: message.guild.id, name }, (err) => {
+        tag.findOneAndRemove({ guild: message.guild.id, name }, (err, tt) => {
           if(err) {
             client.logger.error(err);
             return message.reply("Something went wrong");
           } else {
+            if(!tt) return message.reply("That tag does not exist");
             return message.channel.send(`Deleted, tag ${name}`);
           }
         });
