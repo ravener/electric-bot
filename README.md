@@ -1,2 +1,2 @@
 # electric-bot
-A simple discord bot written in discord.js
+A simple Discord bot written in discord.js made for your server! Ask for invite link.
